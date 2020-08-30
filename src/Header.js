@@ -3,24 +3,26 @@ import "./Header.css";
 
 function Header() {
   return (
-    <div>
-      <nav className="navbar">
-        <div className="navbar--logo-holder">
-          <img
-            src="https://cdn4.iconfinder.com/data/icons/beauty-16/24/Beauty_Cream-512.png"
-            alt="logo"
-            className="navbar--logo"
-          />
-          <h1> Stick'Me</h1>
-        </div>
-        <ul className="navbar--link">
-          <li className="navbar--link-item">Home</li>
-          <li className="navbar--link-item">About</li>
-          <li className="navbar--link-item">Blog</li>
-        </ul>
-      </nav>
-      )
-    </div>
+    <nav className="navbar">
+      <div className="navbar--logo-holder">
+        <img
+          src="https://static.thenounproject.com/png/1335658-200.png"
+          alt="logo"
+          className="navbar--logo"
+        />
+      </div>
+      <ul className="navbar--link">
+        <li className="navbar--link-item">
+          <strong>Home</strong>
+        </li>
+        <li className="navbar--link-item">
+          <strong>About</strong>
+        </li>
+        <li className="navbar--link-item">
+          <strong>Blog</strong>
+        </li>
+      </ul>
+    </nav>
   );
 }
 

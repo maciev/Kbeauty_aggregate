@@ -1,33 +1,25 @@
 import React from "react";
 import "./ProductCard.css";
 
-function ProductCard() {
+function ProductCard({ id, content, title, brand, image, price }) {
   return (
-    <div class="card">
-      <div class="card-image">
-        <div class="media-left">
-          <figure class="image is-128x128">
-            <img
-              src="https://bulma.io/images/placeholders/96x96.png"
-              alt="Placeholder image"
-            />
-          </figure>
-        </div>
+    <div className="card">
+      <div className="card-image">
+        <figure className="image is-128x128">
+          <img src={image} alt="Placeholder image" />
+        </figure>
       </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">John Smith</p>
-            <p class="subtitle is-6">@johnsmith</p>
+      <div className="card-content">
+        <div className="media">
+          <div className="media-content">
+            <p className="title is-4">{brand}</p>
+            <p className="subtitle is-6">{title}</p>
           </div>
         </div>
 
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec
-          iaculis mauris. <a>@bulmaio</a>.<a href="#">#css</a>{" "}
-          <a href="#">#responsive</a>
+        <div className="content">
+          {content}
           <br />
-          <time datetime="2012-3-14">11:09 PM - 1 Jan 2012</time>
         </div>
       </div>
     </div>

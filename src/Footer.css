@@ -1,4 +1,4 @@
-.navbar {
+.footbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,26 +8,27 @@
   width: 100%;
   background-color: #7dddc2;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px 10px 0px 0px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.navbar--logo {
+.footbar--logo {
   width: 4rem;
   height: 4rem;
   margin-right: 0.5rem;
   animation: rotate 0.7s ease-in-out 0.5s;
 }
 
-.navbar--link {
+.footbar--link {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex: 1;
 }
 
-.navbar--link-item {
+.footbar--link-item {
   margin-left: 10px;
 }
 
