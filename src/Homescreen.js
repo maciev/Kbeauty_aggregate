@@ -3,33 +3,49 @@ import ProductCard from "./ProductCard";
 import "./Homescreen.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import firebase from "./firebase";
+import database from "./firebase";
 
 function Homescreen() {
   const [display, setDisplay] = useState(false);
   const [options, setOptions] = useState([]);
   const [search, setSearch] = useState("");
   const wrapperRef = useRef(null);
-  const db = firebase.database();
-
-  firebase.db().collections;
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const pokemon = [];
-    const promises = new Array(20)
-      .fill()
-      .map((v, i) => fetch(`https://pokeapi.co/api/v2/pokemon-form/${i + 1}`));
-    Promise.all(promises).then((pokemonArr) => {
-      return pokemonArr.map((value) =>
-        value
-          .json()
-          .then(({ name, sprites: { front_default: sprite } }) =>
-            pokemon.push({ name, sprite })
-          )
+    database
+      .collection("products")
+      .onSnapshot((snapshot) =>
+        setProducts(snapshot.docs.map((doc) => doc.data()))
       );
-    });
-    setOptions(pokemon);
   }, []);
+
+  console.log(products);
+  //React.useEffect(() => {
+  //  const fetchData = async () => {
+  //    const db = firebase.firestore();
+  //    const data = await db.collection("products").get();
+  //    setProducts(data.docs.map((doc) => doc.data()));
+  //  };
+  //  fetchData();
+  //}, []);
+
+  //useEffect(() => {
+  //  const pokemon = [];
+  //  const promises = new Array(20)
+  //    .fill()
+  //    .map((v, i) => fetch(`https://pokeapi.co/api/v2/pokemon-form/${i + 1}`));
+  //  Promise.all(promises).then((pokemonArr) => {
+  //    return pokemonArr.map((value) =>
+  //      value
+  //        .json()
+  //        .then(({ name, sprites: { front_default: sprite } }) =>
+  //          pokemon.push({ name, sprite })
+  //        )
+  //    );
+  //  });
+  //  setOptions(pokemon);
+  //}, []);
 
   const setPokeDex = (poke) => {
     setSearch(poke);
@@ -75,18 +91,18 @@ function Homescreen() {
           {display && (
             <div className="autoContainer">
               {options
-                .filter(({ name }) => name.indexOf(search.toLowerCase()) > -1)
+                .filter(({ title }) => title.indexOf(search.toLowerCase()) > -1)
                 .slice(0, 5)
-                .map((v, i) => {
+                .map((data) => {
                   return (
                     <div
-                      onClick={() => setPokeDex(v.name)}
+                      onClick={() => setPokeDex(products.title)}
                       className="option"
-                      key={i}
+                      key={products.title}
                       tabIndex="0"
                     >
-                      <span>{v.name}</span>
-                      <img src={v.sprite} alt="pokemon" />
+                      <span>{products.title}</span>
+                      <img src={products.image} alt="pokemon" />
                     </div>
                   );
                 })}

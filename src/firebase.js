@@ -1,6 +1,6 @@
 import firebase from "firebase";
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyApbQ-hvbF5Kv68FOqua14OWU5jYAzng8s",
   authDomain: "kbeauty-aggregate.firebaseapp.com",
   databaseURL: "https://kbeauty-aggregate.firebaseio.com",
@@ -11,6 +11,7 @@ var firebaseConfig = {
   measurementId: "G-CN2Q8B6BV5",
 };
 
-var fire = firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const database = firebaseApp.firestore();
 
-export default firebase;
+export default database;
