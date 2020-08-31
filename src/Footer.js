@@ -7,7 +7,7 @@ function Footer() {
       <div className="footbar--logo-holder"></div>
       <ul className="footbar--link">
         <li className="footbar--link-item">
-          <strong>Disclainer</strong>
+          <strong>Disclaimer</strong>
         </li>
         <li className="footbar--link-item">
           <strong>FAQ</strong>
