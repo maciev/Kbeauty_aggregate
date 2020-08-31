@@ -7,7 +7,7 @@ import database from "./firebase";
 
 function Homescreen() {
   const [display, setDisplay] = useState(false);
-  const [options, setOptions] = useState([]);
+
   const [search, setSearch] = useState("");
   const wrapperRef = useRef(null);
   const [products, setProducts] = useState([]);
@@ -47,8 +47,8 @@ function Homescreen() {
   //  setOptions(pokemon);
   //}, []);
 
-  const setPokeDex = (poke) => {
-    setSearch(poke);
+  const setProductDex = (product) => {
+    setSearch(product);
     setDisplay(false);
   };
 
@@ -66,8 +66,8 @@ function Homescreen() {
     }
   };
 
-  const updatePokeDex = (poke) => {
-    setSearch(poke);
+  const updateProductDex = (product) => {
+    setSearch(product);
     setDisplay(false);
   };
 
@@ -96,13 +96,13 @@ function Homescreen() {
                 .map((products, index) => {
                   return (
                     <div
-                      onClick={() => setPokeDex(products.title)}
+                      onClick={() => setProductDex(products.title)}
                       className="option"
                       key={products.title}
                       tabIndex="0"
                     >
                       <span>{products.title}</span>
-                      <img src={products.image} alt="pokemon" />
+                      <img src={products.image} alt="product" />
                     </div>
                   );
                 })}
