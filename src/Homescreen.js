@@ -90,10 +90,10 @@ function Homescreen() {
           />
           {display && (
             <div className="autoContainer">
-              {options
+              {products
                 .filter(({ title }) => title.indexOf(search.toLowerCase()) > -1)
                 .slice(0, 5)
-                .map((data) => {
+                .map((products, index) => {
                   return (
                     <div
                       onClick={() => setPokeDex(products.title)}
