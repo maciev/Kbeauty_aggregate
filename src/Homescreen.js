@@ -12,6 +12,14 @@ function Homescreen() {
   const wrapperRef = useRef(null);
   const [products, setProducts] = useState([]);
 
+  //useEffect(() => {
+  //  database
+  //    .collection("products")
+  //    .onSnapshot((snapshot) =>
+  //      setProducts(snapshot.docs.map((doc) => doc.data()))
+  //    );
+  //}, []);
+
   useEffect(() => {
     database
       .collection("products")
@@ -21,6 +29,7 @@ function Homescreen() {
   }, []);
 
   console.log(products);
+
   //React.useEffect(() => {
   //  const fetchData = async () => {
   //    const db = firebase.firestore();
@@ -66,10 +75,10 @@ function Homescreen() {
     }
   };
 
-  const updateProductDex = (product) => {
-    setSearch(product);
-    setDisplay(false);
-  };
+  //const updateProductDex = (product) => {
+  //  setSearch(product);
+  //  setDisplay(false);
+  //};
 
   return (
     <div className="section">
@@ -85,7 +94,7 @@ function Homescreen() {
           <input
             type="text"
             value={search}
-            onClick={() => setDisplay(!display)}
+            onClick={() => setDisplay(display)}
             onChange={(event) => setSearch(event.target.value)}
           />
           {display && (

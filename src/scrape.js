@@ -2,15 +2,13 @@ const puppet = require("puppeteer");
 const firebase = require("firebase");
 require("firebase/firestore");
 
-const firebaseConfig = {
-  apiKey: "AIzaSyApbQ-hvbF5Kv68FOqua14OWU5jYAzng8s",
-  authDomain: "kbeauty-aggregate.firebaseapp.com",
-  databaseURL: "https://kbeauty-aggregate.firebaseio.com",
-  projectId: "kbeauty-aggregate",
-  storageBucket: "kbeauty-aggregate.appspot.com",
-  messagingSenderId: "845740091474",
-  appId: "1:845740091474:web:de62bde604d3093fed978b",
-  measurementId: "G-CN2Q8B6BV5",
+var firebaseConfig = {
+  apiKey: "AIzaSyByyoFWELuGb-Krs9eaVnn9uvslCzci3uQ",
+  authDomain: "kbeauty-aggregate-b7319.firebaseapp.com",
+  projectId: "kbeauty-aggregate-b7319",
+  storageBucket: "kbeauty-aggregate-b7319.appspot.com",
+  messagingSenderId: "525778096551",
+  appId: "1:525778096551:web:00659a15144a97d1b82682",
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -28,6 +26,18 @@ async function scrape(_url) {
   const priceJson = await priceText.jsonValue();
   const priceFinal = priceJson.replace("\\n", "").trim();
 
+  const [image] = await page.$x("/html/body/main/div[3]/div[1]/div[2]/img");
+  const imageText = await image.getProperty("src");
+  const imageJson = await imageText.jsonValue();
+  const imageFinal = imageJson.replace("\\n", "").trim();
+
+  const [title] = await page.$x(
+    "/html/body/main/div[1]/div/v-accordion/v-pane/v-pane-header/div/h1"
+  );
+  const titleText = await title.getProperty("textContent");
+  const titleJson = await titleText.jsonValue();
+  const titleFinal = titleJson.replace("\\n", "").trim();
+
   console.log({ priceFinal, _url });
 
   //let fs = require("fs"),
@@ -35,6 +45,8 @@ async function scrape(_url) {
 
   db.collection("products").doc("SayISgeHIc5fT17cRhNn").update({
     price: { priceFinal },
+    title: { titleFinal },
+    image: { imageFinal },
   });
 
   //  fs.writeFileSync("database.json", data, function (err) {
@@ -47,5 +59,5 @@ async function scrape(_url) {
 }
 
 scrape(
-  "https://www.yesstyle.com/en/purito-centella-green-level-safe-sun-spf50-pa-60ml/info.html/pid.1070026959"
+  "https://www.yesstyle.com/en/jigott-uv-sun-block-spf-50-pa-70ml-2-types/info.html/pid.1075338426"
 );
