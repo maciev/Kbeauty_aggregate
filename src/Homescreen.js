@@ -94,7 +94,7 @@ function Homescreen() {
           <input
             type="text"
             value={search}
-            onClick={() => setDisplay(display)}
+            onClick={() => setDisplay(!display)}
             onChange={(event) => setSearch(event.target.value)}
           />
           {display && (

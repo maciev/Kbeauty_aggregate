@@ -44,9 +44,9 @@ async function scrape(_url) {
   //  data = JSON.stringify({ priceFinal });
 
   db.collection("products").doc("SayISgeHIc5fT17cRhNn").update({
-    price: { priceFinal },
-    title: { titleFinal },
-    image: { imageFinal },
+    price: priceFinal,
+    title: titleFinal,
+    image: imageFinal,
   });
 
   //  fs.writeFileSync("database.json", data, function (err) {
