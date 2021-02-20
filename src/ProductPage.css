@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  padding: 30px;
+}
+
+.div__container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100x;
+  position: relative;
+  max-width: 1180px;
+  height: 100%;
+  padding: 0 15px;
+  padding-top: 15px;
+  margin: 0 auto;
+}
+
+.div__container * img {
+  width: 50%;
+}
+
+.div__left {
+  height: 100%;
+  justify-content: center;
+}
+
+.div__right {
+}
+.div__info {
+  display: flex;
+  flex-direction: column;
+}

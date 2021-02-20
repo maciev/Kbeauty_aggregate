@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import ProductCard from "./ProductCard";
 import "./Homescreen.css";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -105,7 +104,10 @@ function Homescreen() {
                 .slice(0, 5)
                 .map((products, index) => {
                   return (
-                    <Link to="/product">
+                    <Link
+                      to={`/product/${products.title}`}
+                      products={products.title}
+                    >
                       <div
                         onClick={() => setProductDex(products.title)}
                         className="option"

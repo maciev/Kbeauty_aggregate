@@ -1,3 +1,3 @@
 <!--To do-->
 <!--When user clicks search item, trigger scrape price-->
-<!--create dynamically loaded product pages (with slugs)-->
+<!--change dynamic pages slugs from %20 to - (hard because it's a prop)-->

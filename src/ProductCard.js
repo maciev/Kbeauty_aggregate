@@ -6,7 +6,7 @@ function ProductCard({ id, content, title, brand, image, price }) {
     <div className="card">
       <div className="card-image">
         <figure className="image is-128x128">
-          <img src={image} alt="Placeholder image" />
+          <img src={image} alt="" />
         </figure>
       </div>
       <div className="card-content">
