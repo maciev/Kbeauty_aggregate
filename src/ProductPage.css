@@ -1,32 +1,41 @@
-.header {
-  position: fixed;
-  padding: 30px;
-}
-
 .div__container {
+  position: relative;
   display: flex;
   flex-direction: row;
-  margin-top: 100x;
-  position: relative;
   max-width: 1180px;
   height: 100%;
-  padding: 0 15px;
-  padding-top: 15px;
-  margin: 0 auto;
+  margin: 12px auto;
+  padding-top: 4rem;
 }
 
 .div__container * img {
-  width: 50%;
+  width: 75%;
 }
 
 .div__left {
+  flex: 60%;
   height: 100%;
-  justify-content: center;
 }
 
 .div__right {
+  flex: 40%;
 }
+
+.div__right,
+.div__left {
+  padding: 0 15px 15px;
+}
+
 .div__info {
   display: flex;
   flex-direction: column;
+  margin-right: auto;
+}
+
+.div__price {
+  color: darkred;
+}
+
+.div__lastedupdated {
+  font-size: 10px;
 }

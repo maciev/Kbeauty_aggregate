@@ -20,11 +20,15 @@ function ProductPage() {
         </div>
         <div className="div__right">
           <div className="div__info">
-            <span className="span__brand">Innisfree</span>
+            <span className="span__brand">
+              <b> Innisfree</b>
+            </span>
             <h1>{product}</h1>
 
             {/*todo stars*/}
-            <div className="div__price">$35.45</div>
+            <div className="div__price">
+              <b> $35.45</b>
+            </div>
             <div className="div__lastedupdated">Price checked 1 hour ago</div>
           </div>
         </div>
