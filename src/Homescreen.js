@@ -4,6 +4,7 @@ import "./Homescreen.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import database from "./firebase";
+import { Link } from "react-router-dom";
 
 function Homescreen() {
   const [display, setDisplay] = useState(false);
@@ -104,15 +105,17 @@ function Homescreen() {
                 .slice(0, 5)
                 .map((products, index) => {
                   return (
-                    <div
-                      onClick={() => setProductDex(products.title)}
-                      className="option"
-                      key={products.title}
-                      tabIndex="0"
-                    >
-                      <span>{products.title}</span>
-                      <img src={products.image} alt="product" />
-                    </div>
+                    <Link to="/product">
+                      <div
+                        onClick={() => setProductDex(products.title)}
+                        className="option"
+                        key={products.title}
+                        tabIndex="0"
+                      >
+                        <span>{products.title}</span>
+                        <img src={products.image} alt="product" />
+                      </div>
+                    </Link>
                   );
                 })}
             </div>

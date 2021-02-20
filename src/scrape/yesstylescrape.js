@@ -26,27 +26,21 @@ async function scrape(_url) {
   const priceJson = await priceText.jsonValue();
   const priceFinal = priceJson.replace("\\n", "").trim();
 
-  const [image] = await page.$x("/html/body/main/div[3]/div[1]/div[2]/img");
-  const imageText = await image.getProperty("src");
-  const imageJson = await imageText.jsonValue();
-  const imageFinal = imageJson.replace("\\n", "").trim();
-
-  const [title] = await page.$x(
-    "/html/body/main/div[1]/div/v-accordion/v-pane/v-pane-header/div/h1"
-  );
-  const titleText = await title.getProperty("textContent");
-  const titleJson = await titleText.jsonValue();
-  const titleFinal = titleJson.replace("\\n", "").trim();
-
   console.log({ priceFinal, _url });
 
-  //let fs = require("fs"),
-  //  data = JSON.stringify({ priceFinal });
+  const date = Date.now();
+  const dateformat = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  }).format(date);
 
   db.collection("products").doc("SayISgeHIc5fT17cRhNn").update({
-    price: priceFinal,
-    title: titleFinal,
-    image: imageFinal,
+    yesstyleprice: priceFinal,
+    yesstyledate: dateformat,
   });
 
   //  fs.writeFileSync("database.json", data, function (err) {
@@ -59,5 +53,5 @@ async function scrape(_url) {
 }
 
 scrape(
-  "https://www.yesstyle.com/en/jigott-uv-sun-block-spf-50-pa-70ml-2-types/info.html/pid.1075338426"
+  "https://www.yesstyle.com/en/innisfree-daily-mild-sunscreen-50ml/info.html/pid.1073481317"
 );
