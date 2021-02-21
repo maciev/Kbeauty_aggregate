@@ -10,6 +10,8 @@
 
 .div__container * img {
   width: 75%;
+  max-width: 600px;
+  min-width: 200px;
 }
 
 .div__left {
@@ -18,6 +20,8 @@
 }
 
 .div__right {
+  display: flex;
+  flex-direction: column;
   flex: 40%;
 }
 
@@ -29,7 +33,7 @@
 .div__info {
   display: flex;
   flex-direction: column;
-  margin-right: auto;
+  align-items: center;
 }
 
 .div__price {
@@ -38,4 +42,23 @@
 
 .div__lastedupdated {
   font-size: 10px;
+}
+
+.div__box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+  padding: 6px 0px;
+  height: 15rem;
+  width: 15rem;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.div__vendorbox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
 }

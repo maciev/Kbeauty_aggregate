@@ -3,6 +3,7 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
+import ProductCard from "./ProductCard";
 
 function ProductPage() {
   const { product } = useParams();
@@ -30,6 +31,21 @@ function ProductPage() {
               <b> $35.45</b>
             </div>
             <div className="div__lastedupdated">Price checked 1 hour ago</div>
+            <div className="div__box">
+              Vendors
+              <div className="div__vendorbox">
+                <h1>Jolse</h1>
+                <p>$14.25</p>
+              </div>
+              <div className="div__vendorbox">
+                <h1>YesStyle</h1>
+                <p>$15.23</p>
+              </div>
+              <div className="div__vendorbox">
+                <h1>Beautynet</h1>
+                <p>$15.42</p>
+              </div>
+            </div>
           </div>
         </div>
 
