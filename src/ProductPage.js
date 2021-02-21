@@ -1,12 +1,37 @@
 import "./ProductPage.css";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
-import ProductCard from "./ProductCard";
+import database from "./firebase";
 
-function ProductPage() {
+function ProductPage({ title, jolseprice, yesstyleprice }) {
+  const [products, setProducts] = useState([
+    { title, jolseprice, yesstyleprice },
+  ]);
+
+  useEffect(() => {
+    database
+      .collection("products")
+      .onSnapshot((snapshot) =>
+        setProducts(snapshot.docs.map((doc) => doc.data()))
+      );
+  }, []);
+
   const { product } = useParams();
+  //console.log(products[0].title);
+
+  //if (product === products.title) {
+  //  return (
+  //    {products
+  //      .filter(({ title }) => title.indexOf()
+  //      .map((products, index) => {
+  //        return ( console.log("products.title")
+  //        )})
+
+  //To Fix
+  //- Pull state data from parent (Homescreen)
+  //- Map, if data.title = params title, then use product.price
 
   return (
     <>
@@ -24,7 +49,7 @@ function ProductPage() {
             <span className="span__brand">
               <b> Innisfree</b>
             </span>
-            <h1>{product}</h1>
+            <h1>{products[0].title}</h1>
 
             {/*todo stars*/}
             <div className="div__price">
@@ -35,11 +60,11 @@ function ProductPage() {
               Vendors
               <div className="div__vendorbox">
                 <h1>Jolse</h1>
-                <p>$14.25</p>
+                <p>{products[0].jolseprice}</p>;
               </div>
               <div className="div__vendorbox">
                 <h1>YesStyle</h1>
-                <p>$15.23</p>
+                <p>{products[0].yesstyleprice}</p>
               </div>
               <div className="div__vendorbox">
                 <h1>Beautynet</h1>
@@ -54,5 +79,9 @@ function ProductPage() {
     </>
   );
 }
+
+//else {
+//  console.log("e");
+//}
 
 export default ProductPage;
