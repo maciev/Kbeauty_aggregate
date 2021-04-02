@@ -13,9 +13,11 @@ function App() {
             <Homescreen />
           </Route>
 
-          <Route path="/product/:product" exactly component={ProductPage}>
-            <ProductPage />
-          </Route>
+          <Route
+            path="/product/:product"
+            exactly
+            component={ProductPage}
+          ></Route>
         </div>
       </Switch>
     </Router>

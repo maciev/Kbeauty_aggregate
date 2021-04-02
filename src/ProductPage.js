@@ -1,41 +1,17 @@
 import "./ProductPage.css";
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
-import database from "./firebase";
 
-function ProductPage({ title, jolseprice, yesstyleprice }) {
-  const [products, setProducts] = useState([
-    { title, jolseprice, yesstyleprice },
-  ]);
-
-  useEffect(() => {
-    database
-      .collection("products")
-      .onSnapshot((snapshot) =>
-        setProducts(snapshot.docs.map((doc) => doc.data()))
-      );
-  }, []);
-
+const ProductPage = (props) => {
   const { product } = useParams();
-  //console.log(products[0].title);
-
-  //if (product === products.title) {
-  //  return (
-  //    {products
-  //      .filter(({ title }) => title.indexOf()
-  //      .map((products, index) => {
-  //        return ( console.log("products.title")
-  //        )})
-
-  //To Fix
-  //- Pull state data from parent (Homescreen)
-  //- Map, if data.title = params title, then use product.price
+  console.log(props.location.state.jolseprice);
 
   return (
     <>
       <Header />
+
       <div className="div__container">
         <div className="div__left">
           <img
@@ -49,7 +25,7 @@ function ProductPage({ title, jolseprice, yesstyleprice }) {
             <span className="span__brand">
               <b> Innisfree</b>
             </span>
-            <h1>{products[0].title}</h1>
+            <h1>{product}</h1>
 
             {/*todo stars*/}
             <div className="div__price">
@@ -60,11 +36,11 @@ function ProductPage({ title, jolseprice, yesstyleprice }) {
               Vendors
               <div className="div__vendorbox">
                 <h1>Jolse</h1>
-                <p>{products[0].jolseprice}</p>;
+                <p>0</p>;
               </div>
               <div className="div__vendorbox">
                 <h1>YesStyle</h1>
-                <p>{products[0].yesstyleprice}</p>
+                {/*<p>{products[0].yesstyleprice}</p>*/}
               </div>
               <div className="div__vendorbox">
                 <h1>Beautynet</h1>
@@ -78,7 +54,7 @@ function ProductPage({ title, jolseprice, yesstyleprice }) {
       </div>
     </>
   );
-}
+};
 
 //else {
 //  console.log("e");
