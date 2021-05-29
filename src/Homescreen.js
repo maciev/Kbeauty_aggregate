@@ -82,6 +82,9 @@ function Homescreen() {
                       to={{
                         pathname: `/product/${products.title}`,
                         state: {
+                          image: products.image,
+                          jolselink: products.jolselink,
+                          yesstylelink: products.yesstylelink,
                           jolseprice: products.jolseprice,
                           yesstyleprice: products.yesstyleprice,
                         },

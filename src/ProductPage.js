@@ -6,20 +6,20 @@ import { useParams } from "react-router-dom";
 
 const ProductPage = (props) => {
   const { product } = useParams();
-  console.log(props.location.state.jolseprice);
+  console.log(props.location.state.jolselink);
 
   return (
     <>
       <Headercomp />
       <div className="div__container">
-        <div className="div__left">
+        <div className="div__top">
           <img
-            src="https://i.ebayimg.com/images/g/3nQAAOSwQZNeTO~x/s-l640.jpg"
+            src={props.location.state.image}
             alt=""
             className="main__image"
           />
         </div>
-        <div className="div__right">
+        <div className="div__bottom">
           <div className="div__info">
             <span className="span__brand">
               <b> Innisfree</b>
@@ -34,11 +34,15 @@ const ProductPage = (props) => {
             <div className="div__box">
               Vendors
               <div className="div__vendorbox">
-                <h1>Jolse</h1>
-                <p>{props.location.state.jolseprice}</p>;
+                <h1>
+                  <a href={props.location.state.jolselink}>Jolse</a>
+                </h1>
+                <p>{props.location.state.jolseprice}</p>
               </div>
               <div className="div__vendorbox">
-                <h1>YesStyle</h1>
+                <h1>
+                  <a href={props.location.state.yesstylelink}>YesStyle</a>
+                </h1>
                 <p>{props.location.state.yesstyleprice}</p>
               </div>
               <div className="div__vendorbox">

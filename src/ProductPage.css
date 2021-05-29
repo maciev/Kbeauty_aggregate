@@ -1,33 +1,34 @@
 .div__container {
-  position: relative;
+  position: fixed;
+  top: 10rem;
   display: flex;
-  flex-direction: row;
-  max-width: 1180px;
-  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
   margin: 12px auto;
-  padding-top: 4rem;
 }
 
 .div__container * img {
-  width: 75%;
+  width: 25%;
   max-width: 600px;
   border-radius: 10px;
   min-width: 200px;
+  box-shadow: 1px 1px 3px 0px rgba(25, 25, 25, 0.25);
 }
 
-.div__left {
+.div__top {
   flex: 60%;
   height: 100%;
 }
 
-.div__right {
+.div__bottom {
   display: flex;
   flex-direction: column;
   flex: 40%;
 }
 
-.div__right,
-.div__left {
+.div__bottom,
+.div__top {
   padding: 0 15px 15px;
 }
 
@@ -48,18 +49,17 @@
 .div__box {
   display: flex;
   flex-direction: column;
-  margin-top: 6px;
-  padding: 6px 0px;
   height: 15rem;
-  width: 15rem;
-  background-color: white;
-  border-radius: 10px;
+  width: 24rem;
 }
 
 .div__vendorbox {
+  background-color: white;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin: auto;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin: 0.1rem 0rem;
+  border-radius: 5px;
 }
