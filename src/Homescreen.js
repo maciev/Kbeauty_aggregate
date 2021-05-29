@@ -83,6 +83,7 @@ function Homescreen() {
                         pathname: `/product/${products.title}`,
                         state: {
                           jolseprice: products.jolseprice,
+                          yesstyleprice: products.yesstyleprice,
                         },
                       }}
                     >

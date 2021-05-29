@@ -14,16 +14,10 @@ function Header() {
       </div>
       <ul className="navbar--link">
         <li className="navbar--link-item">
-          <Link to="/">
-            <strong>Home</strong>
-          </Link>
+          <Link to="/">Home</Link>
         </li>
-        <li className="navbar--link-item">
-          <strong>About</strong>
-        </li>
-        <li className="navbar--link-item">
-          <strong>Blog</strong>
-        </li>
+        <li className="navbar--link-item">About</li>
+        <li className="navbar--link-item">Blog</li>
       </ul>
     </nav>
   );

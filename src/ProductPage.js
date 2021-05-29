@@ -1,6 +1,6 @@
 import "./ProductPage.css";
 import React from "react";
-import Header from "./Header";
+import Headercomp from "./Headercomp";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
 
@@ -10,8 +10,7 @@ const ProductPage = (props) => {
 
   return (
     <>
-      <Header />
-
+      <Headercomp />
       <div className="div__container">
         <div className="div__left">
           <img
@@ -36,11 +35,11 @@ const ProductPage = (props) => {
               Vendors
               <div className="div__vendorbox">
                 <h1>Jolse</h1>
-                <p>0</p>;
+                <p>{props.location.state.jolseprice}</p>;
               </div>
               <div className="div__vendorbox">
                 <h1>YesStyle</h1>
-                {/*<p>{products[0].yesstyleprice}</p>*/}
+                <p>{props.location.state.yesstyleprice}</p>
               </div>
               <div className="div__vendorbox">
                 <h1>Beautynet</h1>
