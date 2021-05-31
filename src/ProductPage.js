@@ -8,18 +8,21 @@ const ProductPage = (props) => {
   const { product } = useParams();
 
   var datas = props.location.state;
-  //const newArray = Object.values(datas);
 
-  //now we have an array with objects -- how do we select object?
-
+  //BELOW CODE REMOVES $
   for (const [key, value] of Object.entries(datas)) {
     if (value.includes("$")) {
-      value.replace("$", "");
+      var newValue = value.replace("$", "").replace("_", "");
+      console.log(newValue);
     } else {
-      console.log("this aint it brah");
+      console.log("this aint it");
     }
-    //console.log(`${key} : ${finalValue}`);
   }
+
+  //NOW LET'S CREATE AN ARRAY WITH THOSE TWO NEW VALUES
+
+  //NOW LET'S SORT THAT ARRAY
+
   return (
     <>
       <Headercomp />
