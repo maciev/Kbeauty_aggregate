@@ -62,4 +62,13 @@
   padding: 1rem 2rem;
   margin: 0.1rem 0rem;
   border-radius: 5px;
+  transform: scale(1);
+  transition: all 200ms ease;
+}
+
+.div__vendorbox:hover,
+.div__vendorbox:focus,
+.div__vendorbox:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  outline: 0;
 }

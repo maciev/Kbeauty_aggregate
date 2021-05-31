@@ -6,8 +6,20 @@ import { useParams } from "react-router-dom";
 
 const ProductPage = (props) => {
   const { product } = useParams();
-  console.log(props.location.state.jolselink);
 
+  var datas = props.location.state;
+  //const newArray = Object.values(datas);
+
+  //now we have an array with objects -- how do we select object?
+
+  for (const [key, value] of Object.entries(datas)) {
+    if (value.includes("$")) {
+      value.replace("$", "");
+    } else {
+      console.log("this aint it brah");
+    }
+    //console.log(`${key} : ${finalValue}`);
+  }
   return (
     <>
       <Headercomp />
@@ -58,9 +70,5 @@ const ProductPage = (props) => {
     </>
   );
 };
-
-//else {
-//  console.log("e");
-//}
 
 export default ProductPage;
