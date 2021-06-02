@@ -7,19 +7,24 @@ import { useParams } from "react-router-dom";
 const ProductPage = (props) => {
   const { product } = useParams();
 
-  var datas = props.location.state;
+  //var datas = props.location.state;
 
   //BELOW CODE REMOVES $
-  for (const [key, value] of Object.entries(datas)) {
+
+  for (const [key, value] of Object.entries(props.location.state)) {
     if (value.includes("$")) {
       var newValue = value.replace("$", "").replace("_", "");
-      console.log(newValue);
+
+      //for (let index = 0; index < 2; index++) {
+      //  const finalArray = newArray.concat(newArray.entries());
+      //}
     } else {
       console.log("this aint it");
     }
+    var newArray = [];
+    newArray.push(newValue);
+    console.log(newArray);
   }
-
-  //NOW LET'S CREATE AN ARRAY WITH THOSE TWO NEW VALUES
 
   //NOW LET'S SORT THAT ARRAY
 
