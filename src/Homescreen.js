@@ -14,13 +14,6 @@ function Homescreen() {
   const wrapperRef = useRef(null);
   const [products, setProducts] = useState([]);
 
-  //const etc = {
-  //  happy: "happy",
-  //  sad: "sad",
-  //};
-
-  //const ProductContext = createContext(etc);
-
   useEffect(() => {
     database
       .collection("products")
@@ -28,8 +21,6 @@ function Homescreen() {
         setProducts(snapshot.docs.map((doc) => doc.data()))
       );
   }, []);
-
-  //console.log(products);
 
   const setProductDex = (product) => {
     setSearch(product);
@@ -49,11 +40,6 @@ function Homescreen() {
       setDisplay(false);
     }
   };
-
-  //const updateProductDex = (product) => {
-  //  setSearch(product);
-  //  setDisplay(false);
-  //};
 
   return (
     <div className="section">
@@ -106,12 +92,11 @@ function Homescreen() {
             </div>
           )}
         </div>
-      </div>
-      <div className="productcardbox">
-        <ProductCard image={products.image} />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <div className="productcardbox">
+          {products.slice(0, 4).map((products, index) => {
+            return <ProductCard image={products.image} />;
+          })}
+        </div>
       </div>
       <Footer />
     </div>

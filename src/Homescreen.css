@@ -4,7 +4,6 @@
 }
 
 .section {
-  /*make navbar fixed padding is temporary*/
   margin-top: 12rem;
   padding-bottom: 4rem;
 }
@@ -30,14 +29,6 @@
   height: 100%;
   width: 20rem;
 }
-/*.search > button {
-  border-style: none;
-  height: 100%;
-  border-radius: 0px 5px 5px 0px;
-  width: 5rem;
-  background-color: lightseagreen;
-  color: white;
-}*/
 
 .auto-container {
   display: flex;
@@ -70,6 +61,7 @@ input {
   top: 52px;
   width: 325px;
   margin-top: -50px;
+  z-index: 1;
 }
 
 .option {
@@ -98,6 +90,7 @@ span {
   justify-content: center;
   display: flex;
   flex-direction: row;
+  z-index: 0;
 }
 
 @media only screen and (max-width: 824px) {
