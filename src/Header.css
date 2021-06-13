@@ -23,6 +23,7 @@
 .navbar--link {
   margin-top: 10px;
   display: flex;
+  font-weight: 600;
   flex-direction: row;
   justify-content: space-between;
   color: white;

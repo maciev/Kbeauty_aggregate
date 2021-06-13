@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, createContext } from "react";
 import "./Homescreen.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import ProductCard from "./ProductCard";
 import database from "./firebase";
 import { Link } from "react-router-dom";
 import ProductPage from "./ProductPage";
@@ -105,6 +106,12 @@ function Homescreen() {
             </div>
           )}
         </div>
+      </div>
+      <div className="productcardbox">
+        <ProductCard image={products.image} />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
       </div>
       <Footer />
     </div>
