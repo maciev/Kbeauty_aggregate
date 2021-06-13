@@ -1,6 +1,6 @@
 import "./ProductPage.css";
 import React from "react";
-import Headercomp from "./Headercomp";
+import Header from "./Header";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
 
@@ -30,16 +30,16 @@ const ProductPage = (props) => {
 
   return (
     <>
-      <Headercomp />
+      <Header />
       <div className="div__container">
-        <div className="div__top">
+        <div className="div__left">
           <img
             src={props.location.state.image}
             alt=""
             className="main__image"
           />
         </div>
-        <div className="div__bottom">
+        <div className="div__right">
           <div className="div__info">
             <span className="span__brand">
               <b> Innisfree</b>
