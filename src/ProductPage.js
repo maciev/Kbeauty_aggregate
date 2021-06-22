@@ -41,10 +41,8 @@ const ProductPage = (props) => {
         </div>
         <div className="div__right">
           <div className="div__info">
-            <span className="span__brand">
-              <b> Innisfree</b>
-            </span>
-            <h1>{product}</h1>
+            <span className="span__brand">Innisfree</span>
+            <span className="span__brand">{product}</span>
 
             {/*todo stars*/}
             <div className="div__price">

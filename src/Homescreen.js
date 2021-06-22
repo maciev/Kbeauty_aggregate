@@ -92,11 +92,11 @@ function Homescreen() {
             </div>
           )}
         </div>
-        <div className="productcardbox">
-          {products.slice(0, 4).map((products, index) => {
-            return <ProductCard image={products.image} />;
-          })}
-        </div>
+      </div>
+      <div className="productcardbox">
+        {products.slice(0, 4).map((products, index) => {
+          return <ProductCard image={products.image} title={products.title} />;
+        })}
       </div>
       <Footer />
     </div>

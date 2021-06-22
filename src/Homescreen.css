@@ -89,7 +89,6 @@ span {
   padding-top: 6rem;
   justify-content: center;
   display: flex;
-  flex-direction: row;
   z-index: 0;
 }
 

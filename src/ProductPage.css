@@ -43,14 +43,23 @@
 }
 
 .span__brand {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: lighter;
+}
+.span__brand:nth-of-type(2) {
+  font-size: 18px;
+  text-align: left;
+  font-weight: normal;
 }
 
 .div__info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.div__info * h1 {
+  justify-content: flex-start;
 }
 
 .div__price {
